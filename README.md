@@ -1,0 +1,2 @@
+# frontend_paddleOCR_protorype
+frontend_paddleOCR_protorype
