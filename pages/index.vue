@@ -11,6 +11,7 @@
             </v-col>
           </v-row>
         </v-card-title>
+        <v-divider> </v-divider>
         <v-card-text>
           <v-row>
             <v-col>
@@ -46,6 +47,39 @@
             </v-col>
           </v-row>
         </v-card-actions>
+      </v-card>
+      <v-card class="my-6 rounded-xl pa-2" v-if="imageUrl.length != 0">
+        <v-card-title>
+          <v-row>
+            <v-col class="text-center">
+              <span> Result </span>
+            </v-col>
+          </v-row>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text>
+          <v-row v-for="(img, index) in imageUrl" :key="index">
+            <v-col :cols="12">
+              <v-card>
+                <v-img class="my-4" :src="img" height="cover" />
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <span class="font-weight-bold">
+                        File name : {{ file[index]?.name }}
+                      </span>
+                    </v-col>
+                    <v-col cols="12">
+                      <span class="font-weight-bold">
+                        result : {{ result[index] }}
+                      </span>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>
@@ -143,7 +177,7 @@ export default {
       }
       const reaponse = await axios({
         method: "post",
-        url: `http://127.0.0.1:8000/files/`,
+        url: `http://122.248.230.51:5000/files/`,
         data: formData,
       });
       console.log(reaponse.data.result);
