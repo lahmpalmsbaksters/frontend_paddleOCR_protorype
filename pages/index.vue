@@ -57,7 +57,7 @@
           </v-row>
         </v-card-title>
         <v-divider></v-divider>
-        <v-card-text>
+        <v-card-text v-if="load == false">
           <v-row v-for="(img, index) in imageUrl" :key="index">
             <v-col :cols="12">
               <v-card>
@@ -79,6 +79,9 @@
               </v-card>
             </v-col>
           </v-row>
+        </v-card-text>
+        <v-card-text v-else>
+          <v-skeleton-loader type="article, actions"></v-skeleton-loader>
         </v-card-text>
       </v-card>
     </v-col>
@@ -136,6 +139,7 @@ export default {
       confident: "",
       imageUrl: [],
       maxFileCount: 100,
+      load: true,
     };
   },
   watch: {
@@ -180,11 +184,12 @@ export default {
         url: `http://122.248.230.51:5000/files/`,
         data: formData,
       });
-      console.log(reaponse.data.result);
+      console.log(reaponse);
+      this.load = false;
 
       // formData.append('file', this.file)
 
-      this.result = reaponse.data.result;
+      this.result = reaponse?.data?.result;
       // this.confident = reaponse.data.result[1]
     },
     funcClear() {
