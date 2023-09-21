@@ -1,0 +1,16 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_5ead5b44"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_009a3c88"
+  }
+]
