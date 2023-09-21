@@ -2,15 +2,22 @@
   {
     "name": "inspire",
     "path": "/inspire",
-    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/inspire.vue",
+    "component": "C:\\\\Users\\\\Surface\\\\OneDrive - Assumption University\\\\Documents\\\\Work\\\\InternBak\\\\frontend_paddleOCR_prototype\\\\pages\\\\inspire.vue",
     "chunkName": "pages/inspire",
-    "_name": "_5ead5b44"
+    "_name": "_6b7651cf"
+  },
+  {
+    "name": "url",
+    "path": "/url",
+    "component": "C:\\\\Users\\\\Surface\\\\OneDrive - Assumption University\\\\Documents\\\\Work\\\\InternBak\\\\frontend_paddleOCR_prototype\\\\pages\\\\url.vue",
+    "chunkName": "pages/url",
+    "_name": "_1da38864"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/index.vue",
+    "component": "C:\\\\Users\\\\Surface\\\\OneDrive - Assumption University\\\\Documents\\\\Work\\\\InternBak\\\\frontend_paddleOCR_prototype\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_009a3c88"
+    "_name": "_66cdff07"
   }
 ]
