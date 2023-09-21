@@ -1,5 +1,55 @@
 <template>
-  <div>
+  <v-row>
+    <v-col>
+      <v-card class="pa-2 rounded-xl elevation-4">
+        <v-card-title>
+          <v-row>
+            <v-col class="text-center">
+              <span class="text-center text-h5 font-weight-bold"
+                >Upload image for process
+              </span>
+            </v-col>
+          </v-row>
+        </v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col>
+              <v-file-input
+                v-model="file"
+                truncate-length="15"
+                multiple
+                @click:clear="funcClear()"
+              ></v-file-input>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-text>
+          <v-row>
+            <v-col class="text-center">
+              <span class="text-center text-h6">
+                {{ !!file ? file.length : 0 }} files selected
+              </span>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions>
+          <v-row>
+            <v-col>
+              <v-btn
+                class="rounded-xl"
+                block
+                color="primary"
+                @click="submitdata()"
+                :disabled="!this.file"
+                >Upload</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
+  <!-- <div>
     <v-row justify="center" align="center">
       <v-col cols="12" sm="8" md="6">
         <h1>{{ test }}</h1>
@@ -15,7 +65,6 @@
           >UPLOAD</v-btn
         >
       </v-col>
-      <!-- <v-img v-if="imageUrl" :src="imageUrl" max-width="300" max-height="300" /> -->
     </v-row>
     <v-row v-for="(img, index) in imageUrl" :key="index">
       <v-col :cols="12">
@@ -38,39 +87,27 @@
         </v-card>
       </v-col>
     </v-row>
-    <!-- <v-row>
-      <v-col>
-        <h1>
-          TEXT : <span class="red--text">{{ result }}</span>
-        </h1>
-      </v-col>
-      <v-col>
-        <h1>
-          Confident : <span class="red--text"> {{ confident }} </span>
-        </h1>
-      </v-col>
-    </v-row> -->
-  </div>
+  </div> -->
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   data() {
     return {
-      test: 'Welcome to Your Vue.js App',
+      test: "Welcome to Your Vue.js App",
       file: null,
       result: [],
-      confident: '',
+      confident: "",
       imageUrl: [],
       maxFileCount: 100,
-    }
+    };
   },
   watch: {
     file: {
       handler(val) {
-        console.log(val)
+        console.log(val);
       },
       deep: true,
     },
@@ -78,16 +115,16 @@ export default {
   methods: {
     onFileChange() {
       if (this.file.length > this.maxFileCount) {
-        this.file.splice(this.maxFileCount)
+        this.file.splice(this.maxFileCount);
       }
       for (const item of this.file) {
         if (!!this.file) {
-          this.imageUrl.push(URL.createObjectURL(item))
+          this.imageUrl.push(URL.createObjectURL(item));
         } else {
-          this.file = null
-          this.result = []
-          this.confident = ''
-          this.imageUrl = []
+          this.file = null;
+          this.result = [];
+          this.confident = "";
+          this.imageUrl = [];
         }
       }
       // if (!!this.file) {
@@ -97,28 +134,28 @@ export default {
       // }
     },
     async submitdata() {
-      console.log(this.file)
-      await this.onFileChange()
-      const formData = new FormData()
+      console.log(this.file);
+      await this.onFileChange();
+      const formData = new FormData();
       for (const item of this.file) {
-        console.log(item)
-        formData.append('files', item)
+        console.log(item);
+        formData.append("files", item);
       }
       const reaponse = await axios({
-        method: 'post',
+        method: "post",
         url: `http://127.0.0.1:8000/files/`,
         data: formData,
-      })
-      console.log(reaponse.data.result)
+      });
+      console.log(reaponse.data.result);
 
       // formData.append('file', this.file)
 
-      this.result = reaponse.data.result
+      this.result = reaponse.data.result;
       // this.confident = reaponse.data.result[1]
     },
     funcClear() {
-      window.location.reload()
+      window.location.reload();
     },
   },
-}
+};
 </script>
