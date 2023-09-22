@@ -20,15 +20,7 @@
             </v-col>
           </v-row>
         </v-card-text>
-        <v-card-text>
-          <v-row>
-            <v-col class="text-center">
-              <span class="text-center text-h6">
-                {{urltext}}
-              </span>
-            </v-col>
-          </v-row>
-        </v-card-text>
+
         <v-card-actions>
           <v-row>
             <v-col>
@@ -36,15 +28,16 @@
                 class="rounded-xl"
                 block
                 color="primary"
+                :disabled="!urltext"
                 @click="submitUrl()"
-                
-                >Upload</v-btn
               >
+                Upload
+              </v-btn>
             </v-col>
           </v-row>
         </v-card-actions>
       </v-card>
-      <v-card class="my-6 rounded-xl pa-2" v-if="imageUrl.length != 0">
+      <v-card class="my-6 rounded-xl pa-2" v-if="show == true">
         <v-card-title>
           <v-row>
             <v-col class="text-center">
@@ -54,21 +47,24 @@
         </v-card-title>
         <v-divider></v-divider>
         <v-card-text v-if="load == false">
-          <v-row v-for="(img, index) in imageUrl" :key="index">
+          <v-row>
             <v-col :cols="12">
               <v-card>
-                <v-img class="my-4" :src="img" height="cover" />
+                <v-img class="my-4" :src="urltext" height="cover" />
                 <v-card-text>
                   <v-row>
                     <v-col cols="12">
                       <span class="font-weight-bold">
-                        File name : {{ file[index]?.name }}
+                        File name : {{ urltext }}
                       </span>
                     </v-col>
                     <v-col cols="12">
-                      <span class="font-weight-bold">
-                        result : {{ result[index] }}
-                      </span>
+                      <v-data-table
+                        :headers="headers"
+                        :items="value_from_api"
+                        :items-per-page="5"
+                        class="elevation-1"
+                      ></v-data-table>
                     </v-col>
                   </v-row>
                 </v-card-text>
@@ -82,18 +78,6 @@
       </v-card>
     </v-col>
   </v-row>
-  <!-- <div>
-
-    <label for="urlInput">Enter URL:</label>
-    <input
-      id="urlInput"
-      type="text"
-      v-model="url"
-      placeholder="Enter a valid URL"
-      @input="handleInputChange"
-    />
-    <button @click="submitUrl">Submit</button>
-  </div> -->
 </template>
 
 <script>
@@ -102,7 +86,7 @@ export default {
   name: "IndexPage",
   data() {
     return {
-        urltext: '',
+      urltext: "",
       test: "Welcome to Your Vue.js App",
       file: null,
       result: [],
@@ -110,6 +94,17 @@ export default {
       imageUrl: [],
       maxFileCount: 100,
       load: true,
+      show: false,
+      headers: [
+        {
+          text: "result",
+          align: "start",
+          sortable: false,
+          value: "result",
+        },
+        { text: "confident", value: "confident" },
+      ],
+      value_from_api: [],
     };
   },
   watch: {
@@ -121,8 +116,19 @@ export default {
     },
   },
   methods: {
-    submitUrl(){
-        console.log(this.urltext)
+    async submitUrl() {
+      this.show = true;
+      const payload = { url: this.urltext };
+      const reaponse = await axios({
+        method: "post",
+        url: `http://122.248.230.51:5000/urls/`,
+        // url: `http://127.0.0.1:8000/urls`,
+        data: payload,
+      });
+
+      console.log(reaponse);
+      this.value_from_api = reaponse?.data?.result;
+      this.load = false;
     },
     onFileChange() {
       if (this.file.length > this.maxFileCount) {

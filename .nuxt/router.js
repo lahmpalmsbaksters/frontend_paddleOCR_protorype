@@ -4,9 +4,9 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _6b7651cf = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _1da38864 = () => interopDefault(import('..\\pages\\url.vue' /* webpackChunkName: "pages/url" */))
-const _66cdff07 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _71a343ee = () => interopDefault(import('../pages/chooseImage.vue' /* webpackChunkName: "pages/chooseImage" */))
+const _f748d74e = () => interopDefault(import('../pages/url.vue' /* webpackChunkName: "pages/url" */))
+const _009a3c88 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -20,16 +20,16 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/inspire",
-    component: _6b7651cf,
-    name: "inspire"
+    path: "/chooseImage",
+    component: _71a343ee,
+    name: "chooseImage"
   }, {
     path: "/url",
-    component: _1da38864,
+    component: _f748d74e,
     name: "url"
   }, {
     path: "/",
-    component: _66cdff07,
+    component: _009a3c88,
     name: "index"
   }],
 
