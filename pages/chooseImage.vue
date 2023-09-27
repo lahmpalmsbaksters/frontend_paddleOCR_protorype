@@ -10,7 +10,7 @@
             :class="{ 'on-hover': hover }"
           >
             <v-img :src="item.img" :aspect-ratio="16 / 9" />
-            <v-card-text>
+            <v-card-text class="px-4">
               <v-row class="fill-height flex-column" justify="space-between">
                 <p class="mt-4 subheading text-left">
                   {{ item.title }}
@@ -35,45 +35,47 @@
         </v-hover>
       </v-col>
     </template>
-    <v-card class="my-6 rounded-xl pa-2" v-if="show == true">
-      <v-card-title>
-        <v-row>
-          <v-col class="text-center">
-            <span> Result </span>
-          </v-col>
-        </v-row>
-      </v-card-title>
-      <v-divider></v-divider>
-      <v-card-text v-if="load == false">
-        <v-row>
-          <v-col :cols="12">
-            <v-card>
-              <v-img class="my-4" :src="urltext" height="cover" />
-              <v-card-text>
-                <v-row>
-                  <v-col cols="12">
-                    <span class="font-weight-bold">
-                      File name : {{ urltext }}
-                    </span>
-                  </v-col>
-                  <v-col cols="12">
-                    <v-data-table
-                      :headers="headers"
-                      :items="value_from_api"
-                      :items-per-page="5"
-                      class="elevation-1"
-                    ></v-data-table>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-card-text>
-      <v-card-text v-else>
-        <v-skeleton-loader type="article, actions"></v-skeleton-loader>
-      </v-card-text>
-    </v-card>
+    <template>
+      <v-card class="my-6 rounded-xl pa-2" v-if="show == true">
+        <v-card-title>
+          <v-row>
+            <v-col class="text-center">
+              <span> Result </span>
+            </v-col>
+          </v-row>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text v-if="load == false">
+          <v-row>
+            <v-col :cols="12">
+              <v-card>
+                <v-img class="my-4" :src="urltext" height="cover" />
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <span class="font-weight-bold">
+                        File name : {{ urltext }}
+                      </span>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-data-table
+                        :headers="headers"
+                        :items="!!value_from_api ? value_from_api : []"
+                        :items-per-page="5"
+                        class="elevation-1"
+                      ></v-data-table>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-text v-else>
+          <v-skeleton-loader type="article, actions"></v-skeleton-loader>
+        </v-card-text>
+      </v-card>
+    </template>
   </v-row>
 </template>
 
@@ -90,15 +92,29 @@ export default {
         img: "https://storage.googleapis.com/medical-alarm/ocrdata/1.png",
       },
       {
-        title: "OCR A",
-        text: "OCR A",
-        img: "https://storage.googleapis.com/medical-alarm/ocrdata/ocr-font-_ocra.fit_lim.size_1050x.jpg",
-      },
-
-      {
         title: "Plain text",
         text: "Plain text",
-        img: "https://storage.googleapis.com/medical-alarm/ocrdata/testocr.png",
+        img: "https://storage.googleapis.com/medical-alarm/ocrdata/IMG_2155.png",
+      },
+      {
+        title: "Text on product",
+        text: "Text on product",
+        img: "https://storage.googleapis.com/medical-alarm/ocrdata/bestbefore.png",
+      },
+      {
+        title: "Text on electrolytic capacitor",
+        text: "Text on electrolytic capacitor",
+        img: "https://media.discordapp.net/attachments/1156520282530525235/1156541053944479784/CE85T-.png?ex=6515584a&is=651406ca&hm=d0b42f4fc9547f971dca2eb2370bc9cd89a479c92a8aa33249b6a6ef949a2a63&=&width=1890&height=1064",
+      },
+      {
+        title: "Text on electrolytic capacitor",
+        text: "Text on electrolytic capacitor",
+        img: "https://media.discordapp.net/attachments/1156520282530525235/1156545555246354503/CE105A--.png?ex=65155c7b&is=65140afb&hm=1f84e7062b27a8eb9501924994bc3c4af7baecb23061eab77a9505bd63e89f4b&=&width=1890&height=1064",
+      },
+      {
+        title: "Text on computer hardware",
+        text: "Text on computer hardware",
+        img: "https://product.hstatic.net/200000420363/product/sa_cb499a129ae14a63bf9715661cbd1ca6_master.jpg",
       },
     ],
     transparent: "rgba(255, 255, 255, 0)",
@@ -124,7 +140,7 @@ export default {
       const payload = { url };
       const reaponse = await axios({
         method: "post",
-        url: `http://122.248.230.51:5000/urls/`,
+        url: `http://3.0.102.165:5000/urls/`,
         // url: `http://127.0.0.1:8000/urls`,
         data: payload,
       });
