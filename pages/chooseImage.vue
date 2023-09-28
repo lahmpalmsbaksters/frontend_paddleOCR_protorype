@@ -104,17 +104,17 @@ export default {
       {
         title: "Text on electrolytic capacitor",
         text: "Text on electrolytic capacitor",
-        img: "https://media.discordapp.net/attachments/1156520282530525235/1156541053944479784/CE85T-.png?ex=6515584a&is=651406ca&hm=d0b42f4fc9547f971dca2eb2370bc9cd89a479c92a8aa33249b6a6ef949a2a63&=&width=1890&height=1064",
+        img: "https://storage.googleapis.com/medical-alarm/ocrdata/CE85T.png",
       },
       {
         title: "Text on electrolytic capacitor",
         text: "Text on electrolytic capacitor",
-        img: "https://media.discordapp.net/attachments/1156520282530525235/1156545555246354503/CE105A--.png?ex=65155c7b&is=65140afb&hm=1f84e7062b27a8eb9501924994bc3c4af7baecb23061eab77a9505bd63e89f4b&=&width=1890&height=1064",
+        img: "https://storage.googleapis.com/medical-alarm/ocrdata/CE105A--2.png",
       },
       {
         title: "Text on computer hardware",
         text: "Text on computer hardware",
-        img: "https://product.hstatic.net/200000420363/product/sa_cb499a129ae14a63bf9715661cbd1ca6_master.jpg",
+        img: "https://storage.googleapis.com/medical-alarm/ocrdata/Ryzen3pro2100ge-ph-gerald.jpg",
       },
     ],
     transparent: "rgba(255, 255, 255, 0)",
