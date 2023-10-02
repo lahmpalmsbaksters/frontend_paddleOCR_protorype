@@ -222,7 +222,7 @@ export default {
       const payload = { url };
       const reaponse = await axios({
         method: "post",
-        url: `http://3.0.102.165:5000/urls/`,
+        url: `http://18.143.76.245:5000/urls/`,
         // url: `http://127.0.0.1:8000/urls`,
         data: payload,
       });
