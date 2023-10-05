@@ -181,7 +181,7 @@ export default {
       }
       const reaponse = await axios({
         method: "post",
-        url: `http://18.143.76.245:5000/files/`,
+        url: `http://18.141.185.135:5000/files/`,
         data: formData,
       });
       console.log(reaponse);
