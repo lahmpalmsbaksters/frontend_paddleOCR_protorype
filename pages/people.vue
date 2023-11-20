@@ -71,7 +71,7 @@
                     </v-col>
                     <v-col cols="12">
                       <span class="font-weight-bold">
-                        result : {{ result[index] }}
+                        <pre>result : {{ result }}</pre>
                       </span>
                     </v-col>
                   </v-row>
@@ -94,7 +94,7 @@ export default {
   name: "IndexPage",
   data() {
     return {
-      test: "Welcome to Your Vue.js App",
+      test: "People Detection",
       file: null,
       result: [],
       confident: "",
