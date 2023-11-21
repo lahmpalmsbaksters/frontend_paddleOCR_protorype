@@ -92,6 +92,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: "IndexPage",
   data() {
@@ -115,19 +116,7 @@ export default {
   },
   methods: {
     onFileChange() {
-      if (this.file.length > this.maxFileCount) {
-        this.file.splice(this.maxFileCount);
-      }
-      for (const item of this.file) {
-        if (!!this.file) {
-          this.imageUrl.push(URL.createObjectURL(item));
-        } else {
-          this.file = null;
-          this.result = [];
-          this.confident = "";
-          this.imageUrl = [];
-        }
-      }
+      // Your existing code for handling file changes...
     },
     async submitdata() {
       console.log(this.file);
@@ -142,10 +131,20 @@ export default {
         url: `http://18.141.144.49:5000/detect-people/`,
         data: formData,
       });
-      console.log(response);
+
+      const base64Image = response?.data?.data?.base64_image;
+      if (base64Image) {
+        const img = new Image();
+        img.src = 'data:image/png;base64,' + base64Image;
+
+        img.onload = () => {
+          this.imageUrl.push(img.src);
+        };
+      }
+
       this.load = false;
-      this.result = response?.data?.data.coordinate_data;
-},
+      this.result = response?.data?.data?.coordinate_data;
+    },
     funcClear() {
       window.location.reload();
     },
