@@ -71,7 +71,10 @@
                     </v-col>
                     <v-col cols="12">
                       <span class="font-weight-bold">
-                        <pre>result : {{ result }}</pre>
+                        <li v-for="face in result">
+                          {{ face }}
+                        </li>
+                        <!-- <pre>result : {{ result }}</pre> -->
                       </span>
                     </v-col>
                   </v-row>
@@ -142,7 +145,7 @@ export default {
       });
       console.log(response);
       this.load = false;
-      this.result = response?.data?.data.face_locations;
+      this.result = response?.data?.face_locations;
 },
     funcClear() {
       window.location.reload();

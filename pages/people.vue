@@ -71,7 +71,9 @@
                     </v-col>
                     <v-col cols="12">
                       <span class="font-weight-bold">
-                        <pre>result : {{ result }}</pre>
+                        <li v-for="face in result">
+                          {{ face }}
+                        </li>
                       </span>
                     </v-col>
                   </v-row>
