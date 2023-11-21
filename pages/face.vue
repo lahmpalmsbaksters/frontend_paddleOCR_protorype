@@ -6,7 +6,7 @@
           <v-row>
             <v-col class="text-center">
               <span class="text-center text-h5 font-weight-bold"
-                >Upload Image for People Detection
+                >Upload Image for Face Detection
               </span>
             </v-col>
           </v-row>
@@ -137,12 +137,12 @@ export default {
       }
       const response = await axios({
         method: "post",
-        url: `http://18.141.144.49:5000/detect-people/`,
+        url: `http://18.141.144.49:5000/detect_faces/`,
         data: formData,
       });
       console.log(response);
       this.load = false;
-      this.result = response?.data?.data.coordinate_data;
+      this.result = response?.data?.data.face_locations;
 },
     funcClear() {
       window.location.reload();
