@@ -7,6 +7,27 @@
     "_name": "_71a343ee"
   },
   {
+    "name": "face",
+    "path": "/face",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/face.vue",
+    "chunkName": "pages/face",
+    "_name": "_612620e3"
+  },
+  {
+    "name": "genderclassification",
+    "path": "/genderclassification",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/genderclassification.vue",
+    "chunkName": "pages/genderclassification",
+    "_name": "_58171a6d"
+  },
+  {
+    "name": "people",
+    "path": "/people",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/people.vue",
+    "chunkName": "pages/people",
+    "_name": "_19413095"
+  },
+  {
     "name": "url",
     "path": "/url",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/url.vue",
