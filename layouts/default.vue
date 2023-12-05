@@ -49,7 +49,7 @@ export default {
         { title: "Optical Character Recognition", url: "/" },
         { title: "People Detection", url: "/people" },
         { title: "Face Detection", url: "/face" },
-        { title: "Gender Classification", url: "/" },
+        { title: "Gender Classification", url: "/genderclassification" },
       ],
     };
   },
