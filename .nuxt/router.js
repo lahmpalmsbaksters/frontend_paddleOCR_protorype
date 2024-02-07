@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _71a343ee = () => interopDefault(import('../pages/chooseImage.vue' /* webpackChunkName: "pages/chooseImage" */))
 const _612620e3 = () => interopDefault(import('../pages/face.vue' /* webpackChunkName: "pages/face" */))
+const _6e111174 = () => interopDefault(import('../pages/gaugedetect.vue' /* webpackChunkName: "pages/gaugedetect" */))
 const _58171a6d = () => interopDefault(import('../pages/genderclassification.vue' /* webpackChunkName: "pages/genderclassification" */))
 const _19413095 = () => interopDefault(import('../pages/people.vue' /* webpackChunkName: "pages/people" */))
 const _f748d74e = () => interopDefault(import('../pages/url.vue' /* webpackChunkName: "pages/url" */))
@@ -30,6 +31,10 @@ export const routerOptions = {
     path: "/face",
     component: _612620e3,
     name: "face"
+  }, {
+    path: "/gaugedetect",
+    component: _6e111174,
+    name: "gaugedetect"
   }, {
     path: "/genderclassification",
     component: _58171a6d,

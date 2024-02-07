@@ -14,6 +14,13 @@
     "_name": "_612620e3"
   },
   {
+    "name": "gaugedetect",
+    "path": "/gaugedetect",
+    "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/gaugedetect.vue",
+    "chunkName": "pages/gaugedetect",
+    "_name": "_6e111174"
+  },
+  {
     "name": "genderclassification",
     "path": "/genderclassification",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/genderclassification.vue",

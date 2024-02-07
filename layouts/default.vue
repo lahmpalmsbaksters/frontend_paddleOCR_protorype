@@ -50,6 +50,7 @@ export default {
         { title: "People Detection", url: "/people" },
         { title: "Face Detection", url: "/face" },
         { title: "Gender Classification", url: "/genderclassification" },
+        { title: "Gauge detection", url: "/gaugedetect" },
       ],
     };
   },
