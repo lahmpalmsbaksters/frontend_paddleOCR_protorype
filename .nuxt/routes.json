@@ -3,49 +3,42 @@
     "name": "chooseImage",
     "path": "/chooseImage",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/chooseImage.vue",
-    "chunkName": "pages/chooseImage",
-    "_name": "_71a343ee"
+    "chunkName": "pages/chooseImage"
   },
   {
     "name": "face",
     "path": "/face",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/face.vue",
-    "chunkName": "pages/face",
-    "_name": "_612620e3"
+    "chunkName": "pages/face"
   },
   {
     "name": "gaugedetect",
     "path": "/gaugedetect",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/gaugedetect.vue",
-    "chunkName": "pages/gaugedetect",
-    "_name": "_6e111174"
+    "chunkName": "pages/gaugedetect"
   },
   {
     "name": "genderclassification",
     "path": "/genderclassification",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/genderclassification.vue",
-    "chunkName": "pages/genderclassification",
-    "_name": "_58171a6d"
+    "chunkName": "pages/genderclassification"
   },
   {
     "name": "people",
     "path": "/people",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/people.vue",
-    "chunkName": "pages/people",
-    "_name": "_19413095"
+    "chunkName": "pages/people"
   },
   {
     "name": "url",
     "path": "/url",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/url.vue",
-    "chunkName": "pages/url",
-    "_name": "_f748d74e"
+    "chunkName": "pages/url"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/lahmpalms/baksters_work/frontend_paddleOCR_protorype/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_009a3c88"
+    "chunkName": "pages/index"
   }
 ]

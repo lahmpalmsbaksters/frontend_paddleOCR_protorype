@@ -61,7 +61,15 @@
           <v-row v-for="(img, index) in imageUrl" :key="index">
             <v-col :cols="12">
               <v-card>
-                <v-img class="my-4" :src="img" :width="300" />
+                <v-row>
+                  <v-col :cols="6">
+                    <v-img class="my-4" :src="previewImageurl" :width="400" />
+                  </v-col>
+                  <v-col :cols="6">
+                    <v-img class="my-4" :src="img" :width="400" />
+                  </v-col>
+                </v-row>
+
                 <v-card-text>
                   <v-row>
                     <v-col cols="12">
@@ -109,6 +117,7 @@ export default {
       imageUrl: [],
       maxFileCount: 100,
       load: true,
+      previewImageurl: "",
     };
   },
   watch: {
@@ -121,7 +130,13 @@ export default {
   },
   methods: {
     onFileChange() {
-      // Your existing code for handling file changes...
+      if (this.file && this.file.length > 0) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.previewImageurl = e.target.result;
+        };
+        reader.readAsDataURL(this.file[0]);
+      }
     },
     async submitdata() {
       console.log(this.file);
