@@ -128,7 +128,7 @@ export default {
       }
       const response = await axios({
         method: "post",
-        url: `http://18.141.144.49:5000/gender-classifications`,
+        url: `${process.env.SMARTVISION_URL}/gender-classifications`,
         data: formData,
       });
 

@@ -128,14 +128,14 @@ export default {
       }
       const response = await axios({
         method: "post",
-        url: `http://18.141.144.49:5000/detect-people/`,
+        url: `${process.env.SMARTVISION_URL}/detect-people/`,
         data: formData,
       });
 
       const base64Image = response?.data?.data?.base64_image;
       if (base64Image) {
         const img = new Image();
-        img.src = 'data:image/png;base64,' + base64Image;
+        img.src = "data:image/png;base64," + base64Image;
 
         img.onload = () => {
           this.imageUrl.push(img.src);

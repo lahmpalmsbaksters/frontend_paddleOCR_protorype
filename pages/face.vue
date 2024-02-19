@@ -129,7 +129,7 @@ export default {
       }
       const response = await axios({
         method: "post",
-        url: `http://18.141.144.49:5000/detect_faces/`,
+        url: `${process.env.SMARTVISION_URL}/detect_faces/`,
         data: formData,
       });
 

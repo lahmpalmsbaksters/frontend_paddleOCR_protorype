@@ -148,7 +148,7 @@ export default {
       }
 
       const response = await this.$axios.post(
-        "http://18.138.254.161:5000/process_image",
+        `${process.env.GAUGEDETECT_URL}/process_image`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

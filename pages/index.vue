@@ -181,7 +181,7 @@ export default {
       }
       const reaponse = await axios({
         method: "post",
-        url: `http://18.141.185.135:5000/files/`,
+        url: `${process.env.PADDLEOCR_URL}/files/`,
         data: formData,
       });
       console.log(reaponse);

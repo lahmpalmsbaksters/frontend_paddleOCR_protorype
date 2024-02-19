@@ -121,7 +121,7 @@ export default {
       const payload = { url: this.urltext };
       const reaponse = await axios({
         method: "post",
-        url: `http://18.141.185.135:5000/urls/`,
+        url: `${process.env.PADDLEOCR_URL}/urls/`,
         // url: `http://127.0.0.1:8000/urls`,
         data: payload,
       });
@@ -160,7 +160,7 @@ export default {
       }
       const reaponse = await axios({
         method: "post",
-        url: `http://18.141.185.135:5000/files/`,
+        url: `${process.env.PADDLEOCR_URL}/files/`,
         data: formData,
       });
       console.log(reaponse);
