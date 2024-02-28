@@ -199,7 +199,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"GAUGEDETECT_URL":"http://13.215.206.221:5000","PADDLEOCR_URL":"http://13.215.251.138:5000","SMARTVISION_URL":"http://54.169.100.234:5000"}
+      env: {"GAUGEDETECT_URL":"http://13.215.206.221:5000","PADDLEOCR_URL":"http://13.215.251.138:5000","SMARTVISION_URL":"http://54.169.100.234:5000","KCEOCR_URL":"http://52.74.236.229"}
     }
     // Only set once
 
