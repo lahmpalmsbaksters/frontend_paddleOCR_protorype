@@ -6,7 +6,7 @@
           <v-row>
             <v-col class="text-center">
               <span class="text-center text-h5 font-weight-bold"
-                >Upload image for process
+                >Upload image for OCR
               </span>
             </v-col>
           </v-row>
@@ -64,11 +64,11 @@
                 <v-img class="my-4" :src="img" height="cover" />
                 <v-card-text>
                   <v-row>
-                    <v-col cols="12">
+                    <!-- <v-col cols="12">
                       <span class="font-weight-bold">
                         File name : {{ file[index]?.name }}
                       </span>
-                    </v-col>
+                    </v-col> -->
                     <v-col cols="12">
                       <span class="font-weight-bold">
                         result : {{ result[index] }}
@@ -144,8 +144,7 @@ export default {
   },
   watch: {
     file: {
-      handler(val) {
-        console.log(val);
+      handler(newValue, oldValue) {
       },
       deep: true,
     },
@@ -155,6 +154,7 @@ export default {
       if (this.file.length > this.maxFileCount) {
         this.file.splice(this.maxFileCount);
       }
+      console.log(this.file.length);
       for (const item of this.file) {
         if (!!this.file) {
           this.imageUrl.push(URL.createObjectURL(item));
@@ -184,12 +184,10 @@ export default {
         url: `${process.env.KCEOCR_URL}/upload`,
         data: formData,
       });
-      console.log(reaponse?.data?.ocr_text);
+      console.log(reaponse);
       this.load = false;
 
-
-      this.result = reaponse?.data?.ocr_text;
-      console.log(this.result)
+      this.result.push(reaponse?.data?.ocr_text);
       // this.result = reaponse?.data?.result;
       // this.confident = reaponse.data.result[1]
     },

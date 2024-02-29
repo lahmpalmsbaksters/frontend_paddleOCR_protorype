@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar absolute elevation="4" app color="primary">
       <v-toolbar-title class="white--text"
-        ><span class="text-h4">Smartvison</span>
+        ><span class="text-h4">Smartvision</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
