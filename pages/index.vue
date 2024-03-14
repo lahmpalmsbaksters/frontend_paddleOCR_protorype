@@ -177,18 +177,18 @@ export default {
       const formData = new FormData();
       for (const item of this.file) {
         console.log(item);
-        formData.append("image", item);
+        formData.append("files", item);
       }
       const reaponse = await axios({
         method: "post",
-        url: `${process.env.KCEOCR_URL}/upload`,
+        url: `${process.env.PADDLEOCR_URL}/files/`,
         data: formData,
       });
       console.log(reaponse);
       this.load = false;
 
-      this.result.push(reaponse?.data?.ocr_text);
-      // this.result = reaponse?.data?.result;
+      // this.result.push(reaponse?.data?.ocr_text);
+      this.result = reaponse?.data?.result;
       // this.confident = reaponse.data.result[1]
     },
     funcClear() {
