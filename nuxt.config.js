@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   env: {
-    GAUGEDETECT_URL: "http://13.215.206.221:5000",
+    GAUGEDETECT_URL: "https://www.gaugedetect.lahmpapas.site",
     PADDLEOCR_URL: "https://www.manavisocr.lahmpapas.site",
     SMARTVISION_URL: "https://www.manavisdt.lahmpapas.site",
     KCEOCR_URL: "http://52.74.236.229"
