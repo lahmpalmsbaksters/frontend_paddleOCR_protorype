@@ -222,7 +222,7 @@ export default {
       const payload = { url };
       const reaponse = await axios({
         method: "post",
-        url: `${process.env.PADDLEOCR_URL}/urls/`,
+        url: `${process.env.PADDLEOCR_URL}/urls`,
         // url: `http://127.0.0.1:8000/urls`,
         data: payload,
       });
