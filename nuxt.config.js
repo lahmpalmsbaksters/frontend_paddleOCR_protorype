@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   env: {
     GAUGEDETECT_URL: "http://13.215.206.221:5000",
-    PADDLEOCR_URL: "http://13.215.251.138:5000",
-    SMARTVISION_URL: "http://54.169.100.234:5000",
+    PADDLEOCR_URL: "https://www.manavisocr.lahmpapas.site",
+    SMARTVISION_URL: "https://www.manavisdt.lahmpapas.site",
     KCEOCR_URL: "http://52.74.236.229"
   },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode

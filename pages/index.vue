@@ -64,11 +64,11 @@
                 <v-img class="my-4" :src="img" height="cover" />
                 <v-card-text>
                   <v-row>
-                    <!-- <v-col cols="12">
+                    <v-col cols="12">
                       <span class="font-weight-bold">
                         File name : {{ file[index]?.name }}
                       </span>
-                    </v-col> -->
+                    </v-col>
                     <v-col cols="12">
                       <span class="font-weight-bold">
                         result : {{ result[index] }}
@@ -184,7 +184,7 @@ export default {
         url: `${process.env.PADDLEOCR_URL}/files/`,
         data: formData,
       });
-      console.log(reaponse);
+      console.log(reaponse?.data);
       this.load = false;
 
       // this.result.push(reaponse?.data?.ocr_text);
